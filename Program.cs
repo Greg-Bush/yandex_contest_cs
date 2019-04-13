@@ -6,24 +6,25 @@ namespace yandex_contest
     {
         static void Main(string[] args)
         {
+            int maxResult = 0;
+            int counter = 0;
             int n = readNextNumber();
-            if (n < 1)
-            {
-                return;
-            }
-            int previousNumber = readNextNumber();
-            output(previousNumber);
-            int i = 1;
+            int i = 0;
             while (i < n)
             {
                 int number = readNextNumber();
-                if (number != previousNumber)
+                if (number == 1)
                 {
-                    output(number);
-                    previousNumber = number;
+                    counter++;
+                }
+                else
+                {
+                    maxResult = Math.Max(maxResult, counter);
+                    counter = 0;
                 }
                 i++;
             }
+            output(Math.Max(maxResult, counter));
         }
 
         private static int readNextNumber()
