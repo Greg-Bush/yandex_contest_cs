@@ -6,27 +6,33 @@ namespace yandex_contest
     {
         static void Main(string[] args)
         {
-            int maxResult = 0;
-            int counter = 0;
             int n = readNextNumber();
-            int i = 0;
-            while (i < n)
+            if (n < 1)
             {
-                int number = readNextNumber();
-                if (number == 1)
-                {
-                    counter++;
-                }
-                else
-                {
-                    maxResult = Math.Max(maxResult, counter);
-                    counter = 0;
-                }
-                i++;
+                return;
             }
-            output(Math.Max(maxResult, counter));
+            int sequenceLength = n * 2;
+
+            bool final = false;
+            while (!final)
+            {
+                char[] sequence = new char[n];
+                sequence[0] = openingBracket;
+
+            }
         }
 
+        private static char openingBracket = '(';
+        private static char closingBracket = ')';
+        private static char[] buildNextBracketSequence(char[] previous)
+        {
+
+            return previous;
+        }
+        private static isRightBigger(char[] leftSequence, char[] rightSequence)
+        {
+            
+        }
         private static int readNextNumber()
         {
             return int.Parse(Console.ReadLine());
